@@ -55,6 +55,26 @@ class QCResult:
             columns=columns,
         )
 
+    def issues_tables_by_column(self) -> dict[str, pd.DataFrame]:
+        """Return QC issues split into separate tables by column."""
+        issues_df = self.issues_table()
+
+        if issues_df.empty:
+            return {}
+
+        tables: dict[str, pd.DataFrame] = {}
+
+        for col_name, group in issues_df.groupby("column", dropna=False):
+            pretty_col = "general" if pd.isna(col_name) else str(col_name)
+
+            tables[pretty_col] = (
+                group
+                .drop(columns=["column"])
+                .reset_index(drop=True)
+            )
+
+        return tables
+
     def summaries(self) -> dict[str, pd.DataFrame]:
         """Return all per-check summary tables."""
         return {
@@ -143,22 +163,6 @@ def run_pipeline(
 ) -> QCResult:
     """
     Run the QC pipeline on a pandas DataFrame.
-
-    Parameters
-    ----------
-    df:
-        Input clinical dataset.
-    config:
-        Optional QC configuration. If None, a default QCConfig is used.
-    checks:
-        Optional list of checks to run. Valid values are:
-        "required_columns", "missingness", "outliers", "dates",
-        "coding", and "ranges".
-
-    Returns
-    -------
-    QCResult
-        Container with all issues, summary tables, and dataset metadata.
     """
     config = config or QCConfig()
     enabled = _validate_checks(checks)
