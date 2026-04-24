@@ -1,0 +1,29 @@
+required_columns:
+  - patient_id
+  - age
+  - sex
+  - admit_date
+  - discharge_date
+
+value_ranges:
+  age:
+    min: 0
+    max: 120
+    severity: warning
+
+allowed_values:
+  sex:
+    - M
+    - F
+
+date_rules:
+  - start: admit_date
+    end: discharge_date
+    rule: end_on_or_after_start
+    severity: error
+
+missingness_thresholds:
+  warning: 0.1
+  error: 0.3
+
+outlier_method: iqr
