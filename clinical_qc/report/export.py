@@ -11,7 +11,7 @@ def export_html_report(result: QCResult, output_path: str | Path) -> None:
     """Export a simple HTML QC report."""
     output_path = Path(output_path)
 
-    issues_df = result.issues_table()
+    issues_by_column = result.issues_tables_by_column()
     stats = result.summary_stats()
 
     html = f"""
@@ -72,8 +72,14 @@ def export_html_report(result: QCResult, output_path: str | Path) -> None:
     <h2>Issue Type Distribution</h2>
     <img src="issue_type_bar.png" alt="Issue type distribution chart">
 
-    <h2>Issues Table</h2>
-    {issues_df.to_html(index=False)}
+    <h2>Issues by Column</h2>
+    {
+        "<p>No QC issues found.</p>" if not issues_by_column else "".join(
+            f"<h3>{col.replace('_', ' ').title()} Issues</h3>"
+            + table.to_html(index=False)
+            for col, table in issues_by_column.items()
+        )
+    }
 </body>
 </html>
 """
