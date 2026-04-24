@@ -30,7 +30,7 @@ def main() -> None:
     result = run_pipeline(df, config)
 
     issues_df = result.issues_table()
-    summaries = result.summaries()   # ⭐ 关键修复点
+    summaries = result.summaries()  
 
     issues_path = output_dir / "issues.csv"
     missingness_chart_path = output_dir / "missingness_bar.png"
