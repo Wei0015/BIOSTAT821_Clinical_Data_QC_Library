@@ -1,0 +1,147 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Clinical QC Report</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+        }
+        h1, h2 {
+            color: #2c3e50;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 16px;
+        }
+        th, td {
+            border: 1px solid #cccccc;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .summary {
+            background-color: #f8f9fa;
+            padding: 16px;
+            border-radius: 8px;
+            margin-bottom: 24px;
+        }
+        img {
+            max-width: 800px;
+            width: 100%;
+            margin: 16px 0;
+            border: 1px solid #dddddd;
+        }
+    </style>
+</head>
+<body>
+    <h1>Clinical Data QC Report</h1>
+
+    <div class="summary">
+        <p><strong>Rows:</strong> 4</p>
+        <p><strong>Columns:</strong> 5</p>
+        <p><strong>Total Issues:</strong> 7</p>
+        <p><strong>Severity Counts:</strong> {'warning': 6, 'error': 1}</p>
+        <p><strong>Issue Type Counts:</strong> {'missingness': 2, 'range_check': 2, 'code_check': 2, 'date_logic': 1}</p>
+    </div>
+
+    <h2>Missing Data Bar Chart</h2>
+    <img src="missingness_bar.png" alt="Missing data bar chart">
+
+    <h2>Issue Type Distribution</h2>
+    <img src="issue_type_bar.png" alt="Issue type distribution chart">
+
+    <h2>Issues by Column</h2>
+    <h3>Age Issues</h3><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>row</th>
+      <th>check_type</th>
+      <th>severity</th>
+      <th>message</th>
+      <th>value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>NaN</td>
+      <td>missingness</td>
+      <td>warning</td>
+      <td>age has 25.0% missing values</td>
+      <td>0.25</td>
+    </tr>
+    <tr>
+      <td>1.0</td>
+      <td>range_check</td>
+      <td>warning</td>
+      <td>age=-3.0 is outside allowed range [0, 120]</td>
+      <td>-3.0</td>
+    </tr>
+    <tr>
+      <td>2.0</td>
+      <td>range_check</td>
+      <td>warning</td>
+      <td>age=250.0 is outside allowed range [0, 120]</td>
+      <td>250.0</td>
+    </tr>
+  </tbody>
+</table><h3>Discharge Date Issues</h3><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>row</th>
+      <th>check_type</th>
+      <th>severity</th>
+      <th>message</th>
+      <th>value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>NaN</td>
+      <td>missingness</td>
+      <td>warning</td>
+      <td>discharge_date has 25.0% missing values</td>
+      <td>0.25</td>
+    </tr>
+    <tr>
+      <td>1.0</td>
+      <td>date_logic</td>
+      <td>error</td>
+      <td>discharge_date is earlier than admit_date</td>
+      <td>2024-01-08</td>
+    </tr>
+  </tbody>
+</table><h3>Sex Issues</h3><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>row</th>
+      <th>check_type</th>
+      <th>severity</th>
+      <th>message</th>
+      <th>value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>2.0</td>
+      <td>code_check</td>
+      <td>warning</td>
+      <td>unexpected category value: X</td>
+      <td>X</td>
+    </tr>
+    <tr>
+      <td>3.0</td>
+      <td>code_check</td>
+      <td>warning</td>
+      <td>unexpected category value: female</td>
+      <td>female</td>
+    </tr>
+  </tbody>
+</table>
+</body>
+</html>

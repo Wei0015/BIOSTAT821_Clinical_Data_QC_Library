@@ -8,7 +8,10 @@ import pandas as pd
 from clinical_qc.models import QCIssue
 
 
-def _numeric_columns(df: pd.DataFrame, columns: Iterable[str] | None = None) -> list[str]:
+def _numeric_columns(
+    df: pd.DataFrame,
+    columns: Iterable[str] | None = None,
+) -> list[str]:
     if columns is not None:
         return [col for col in columns if col in df.columns]
     return df.select_dtypes(include=[np.number]).columns.tolist()
