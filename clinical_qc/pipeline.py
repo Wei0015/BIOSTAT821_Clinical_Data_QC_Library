@@ -15,7 +15,6 @@ from clinical_qc.checks.ranges import check_ranges
 from clinical_qc.config import QCConfig
 from clinical_qc.models import QCIssue
 
-
 VALID_CHECKS = {
     "required_columns",
     "missingness",

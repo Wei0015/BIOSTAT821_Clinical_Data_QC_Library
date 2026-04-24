@@ -1,0 +1,8 @@
+row,column,check_type,severity,message,value
+,age,missingness,warning,age has 25.0% missing values,0.25
+,discharge_date,missingness,warning,discharge_date has 25.0% missing values,0.25
+1.0,age,range_check,warning,"age=-3.0 is outside allowed range [0, 120]",-3.0
+2.0,age,range_check,warning,"age=250.0 is outside allowed range [0, 120]",250.0
+1.0,discharge_date,date_logic,error,discharge_date is earlier than admit_date,2024-01-08
+2.0,sex,code_check,warning,unexpected category value: X,X
+3.0,sex,code_check,warning,unexpected category value: female,female

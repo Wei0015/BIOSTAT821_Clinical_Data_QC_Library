@@ -1,0 +1,70 @@
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>row</th>
+      <th>column</th>
+      <th>check_type</th>
+      <th>severity</th>
+      <th>message</th>
+      <th>value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>NaN</td>
+      <td>age</td>
+      <td>missingness</td>
+      <td>warning</td>
+      <td>age has 25.0% missing values</td>
+      <td>0.25</td>
+    </tr>
+    <tr>
+      <td>NaN</td>
+      <td>discharge_date</td>
+      <td>missingness</td>
+      <td>warning</td>
+      <td>discharge_date has 25.0% missing values</td>
+      <td>0.25</td>
+    </tr>
+    <tr>
+      <td>1.0</td>
+      <td>age</td>
+      <td>range_check</td>
+      <td>warning</td>
+      <td>age=-3.0 is outside allowed range [0, 120]</td>
+      <td>-3.0</td>
+    </tr>
+    <tr>
+      <td>2.0</td>
+      <td>age</td>
+      <td>range_check</td>
+      <td>warning</td>
+      <td>age=250.0 is outside allowed range [0, 120]</td>
+      <td>250.0</td>
+    </tr>
+    <tr>
+      <td>1.0</td>
+      <td>discharge_date</td>
+      <td>date_logic</td>
+      <td>error</td>
+      <td>discharge_date is earlier than admit_date</td>
+      <td>2024-01-08</td>
+    </tr>
+    <tr>
+      <td>2.0</td>
+      <td>sex</td>
+      <td>code_check</td>
+      <td>warning</td>
+      <td>unexpected category value: X</td>
+      <td>X</td>
+    </tr>
+    <tr>
+      <td>3.0</td>
+      <td>sex</td>
+      <td>code_check</td>
+      <td>warning</td>
+      <td>unexpected category value: female</td>
+      <td>female</td>
+    </tr>
+  </tbody>
+</table>
