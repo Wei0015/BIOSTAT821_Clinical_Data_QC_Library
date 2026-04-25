@@ -119,4 +119,4 @@ The pipeline generates:
 This project was developed collaboratively by:
 
 - Yichen Lai – M.S. Biostatistics, Duke University  
-- Wei Wang – M.S. Biostatistics, Duke University  
+- Wei Ding – M.S. Biostatistics, Duke University  
