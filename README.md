@@ -133,12 +133,8 @@ This project made use of generative AI tools to support development. All outputs
 
 Generative AI was used in the following ways:
 
-- Assisted in designing the overall project structure (modular layout with checks, pipeline, report, and CLI)
-- Provided suggestions for organizing code into reusable components
+- Provided suggestions for organizing code
 - Helped debug Python errors during development (e.g., import issues, function errors)
-- Suggested improvements for writing unit tests using `pytest`
-- Assisted with configuring linting and formatting tools (`ruff`, `pyproject.toml`)
-- Helped generate example command-line usage patterns
 - Provided the rough structure of the README file
 - Assisted in formatting and improving code readability
 
