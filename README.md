@@ -119,4 +119,40 @@ The pipeline generates:
 This project was developed collaboratively by:
 
 - Yichen Lai – M.S. Biostatistics, Duke University  
-- Wei Ding – M.S. Biostatistics, Duke University  
+- Wei Ding – M.S. Biostatistics, Duke University
+
+## Generative AI Usage
+
+This project made use of generative AI tools to support development. All outputs were reviewed, modified, and integrated by the authors.
+
+### Tools Used
+
+- ChatGPT (OpenAI)
+
+### How the Tools Were Used
+
+Generative AI was used in the following ways:
+
+- Assisted in designing the overall project structure (modular layout with checks, pipeline, report, and CLI)
+- Provided suggestions for organizing code into reusable components
+- Helped debug Python errors during development (e.g., import issues, function errors)
+- Suggested improvements for writing unit tests using `pytest`
+- Assisted with configuring linting and formatting tools (`ruff`, `pyproject.toml`)
+- Helped generate example command-line usage patterns
+- Provided the rough structure of the README file
+- Assisted in formatting and improving code readability
+
+### What the Tools Produced
+
+The generative AI tools produced:
+
+- Suggested code snippets for functions and project structure
+- Example test cases and testing strategies
+- Outline drafts and wording improvements
+- Debugging suggestions and explanations of errors
+
+All generated outputs were carefully reviewed, tested, and modified before inclusion in the final project.
+
+### Author Responsibility
+
+The authors take full responsibility for the correctness, originality, and integrity of the final submitted code. Generative AI was used as a supporting tool, not as a replacement for understanding or implementation.
