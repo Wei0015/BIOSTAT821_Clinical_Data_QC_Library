@@ -121,7 +121,7 @@ This project was developed collaboratively by:
 - Yichen Lai – M.S. Biostatistics, Duke University  
 - Wei Ding – M.S. Biostatistics, Duke University
 
-## Generative AI Usage
+# Generative AI Usage
 
 This project made use of generative AI tools to support development. All outputs were reviewed, modified, and integrated by the authors.
 
